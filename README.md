@@ -1,1 +1,1 @@
-# ce-hackathon
+# Client Engineering Hackathon - 2022
