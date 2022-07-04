@@ -457,7 +457,3 @@ There's an `Import Skill` option available whenever you create a new skill - it 
 
 ## Summary
 _**Well done! You've created your first basic chatbot that understands user intent, can pick out entities, and responds differently depending on user feedback, using both text and images.**_
-
-The next lab will show you how to actually get your chatbot in front of your users, using multiple _**integration**_ points.
-
-_**Now go to [Lab 2: Deploying Your Chatbot](../2-Integrations) to get your chatbot working in a live environment.**_
