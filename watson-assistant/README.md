@@ -15,6 +15,10 @@ In this lab we'll start to build a chatbot, by using the building blocks of _Wat
 **[1.3]** <kbd>Click on **Launch Watson Assistant**.</kbd>
 
 ![](./images/04-assistant-service-launch.png)
+![](./images/04-assistant-service-create1.png)
+![](./images/04-assistant-service-create2.png)
+![](./images/04-assistant-service-welcome.png)
+
 
 ## Understanding user _**intent**_
 An _**intent**_ represents the **purpose** of a user's input. By recognising the _intent_ expressed by a user, _Watson Assistant_ can choose the correct _dialog_ flow to use to provide a suitable and meaningful response. To plan the _intents_ for your chatbot, you need to consider what your users might want to do, and what you want your chatbot to be able to handle.
