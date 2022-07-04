@@ -15,8 +15,11 @@ In this lab we'll start to build a chatbot, by using the building blocks of _Wat
 **[1.3]** <kbd>Click on **Launch Watson Assistant**.</kbd>
 
 ![](./images/04-assistant-service-launch.png)
+
 ![](./images/04-assistant-service-create1.png)
+
 ![](./images/04-assistant-service-create2.png)
+
 ![](./images/04-assistant-service-welcome.png)
 
 
@@ -27,13 +30,13 @@ Before we get onto intents, the first thing we need to do in _Watson Assistant_ 
 
 **[2.1]** <kbd>Click on the **Settings icon** in the sidebar, then **Enable Dialog**. </kbd>
 
-![](./images/05-assistant-service-settings)
+![](./images/05-assistant-service-settings.png)
 
-![](./images/05-assistant-service-settings-en-dialog)
+![](./images/05-assistant-service-settings-en-dialog.png)
 
 <kbd>Ensure **Dialog skill** is selected, then hit **Activate Dialog**.</kbd>
 
-![](./images/05-assistant-service-settings-en-dialog-en)
+![](./images/05-assistant-service-settings-en-dialog-en.png)
 
 <kbd>Enter the name **Phone Advisor** for your skill, and hit **Create dialog skill**.</kbd>
 
