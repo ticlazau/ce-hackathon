@@ -1,40 +1,16 @@
-# **Lab 1: Chatbot Basics**
+# Chatbot Basics**
 In this lab we'll start to build a chatbot, by using the building blocks of _Watson Assistant_ to create a function that can recommend a new mobile phone for a user, based on their experience and feedback when using previous models.
 
 ## Requirements
 - [IBM Cloud account](https://cloud.ibm.com/)
 
 ## Agenda
-- Setup the _Watson Assistant_ service
 - Understanding user _intent_
 - Introducing _entities_
 - Building responses with a _dialog tree_
 - Testing within _Watson Assistant_
 - Adding rich content: _sending images_
 
-## Setup the _Watson Assistant_ service
-In this section we are going to create a [_Watson Assistant_](https://www.ibm.com/cloud/watson-assistant/) instance on _IBM Cloud_, and use it to build a basic chat interface that answers queries about mobile phones.
-
-**[1.1]** Log into _IBM Cloud_ and create a _Watson Assistant_ service.
-- <kbd>Click on **Catalog**, then **Services**, and filter by clicking on **AI**</kbd>
-- <kbd>Select _**Watson Assistant**_</kbd>
-
-_Note: if you've previously created a Watson Assistant service, you can reuse it, and therefore don't need to setup another one here. If this is the case go to step [1.3] now._
-
-![](./images/01-assistant-service.png)  
-
-**[1.2]** <kbd>Select your local **region**.</kbd>
-
-<kbd>Give the service a unique name: we'd suggest something like **Watson Assistant-eventname-yourinitials**</kbd>
-
-e.g. `Watson Assistant-DSA2020-GRW`
-
-<kbd>Select the default **Lite** plan if you are using your personal _IBM Cloud_ ID, or **Standard** if you are using a linked account.</kbd>
-
-<kbd>Hit **Create**.</kbd>
-
-![](./images/02-assistant-service-create1.png)
-![](./images/03-assistant-service-create2.png)
 
 **[1.3]** <kbd>Click on **Launch Watson Assistant**.</kbd>
 
