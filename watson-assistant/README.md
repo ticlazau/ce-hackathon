@@ -16,7 +16,7 @@ In this lab we'll start to build a chatbot, by using the building blocks of _Wat
 
 ![](./images/04-assistant-service-launch.png)
 
-<kbd>Click **+** on top right in order to create a new Chat Bot, and chose **Phone Adviser - <your name>**.</kbd>
+<kbd>Click **+** on top right in order to create a new Chat Bot, and chose **Phone Adviser - YourName**.</kbd>
 
 ![](./images/04-assistant-service-create1.png)
 
