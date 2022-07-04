@@ -449,7 +449,7 @@ Here's how it should look:
 ![](./images/54-image-try-it2.png)
 ![](./images/55-image-try-it3.png)
 
-**[6.9]** If you need to you can download the _Watson Assistant_ _skill_ we've created so far from [here](./assistant/skill-Phone-Advisor-lab-1.json).
+**[6.9]** If you need to you can download the _Watson Assistant_ _skill_ we've created so far from [here](./assistant/skill-Phone-Advisor-basic.json).
 
 There's an `Import Skill` option available whenever you create a new skill - it will be useful when you are backing up, exchanging skills, etc.:
 
