@@ -23,17 +23,17 @@ In this lab we'll start to build a chatbot, by using the building blocks of _Wat
 ## Understanding user _**intent**_
 An _**intent**_ represents the **purpose** of a user's input. By recognising the _intent_ expressed by a user, _Watson Assistant_ can choose the correct _dialog_ flow to use to provide a suitable and meaningful response. To plan the _intents_ for your chatbot, you need to consider what your users might want to do, and what you want your chatbot to be able to handle.
 
-Before we get onto intents, the first thing we need to do in _Watson Assistant_ is create a _**skill**_. A _**skill**_ contains the training data and machine learning logic that enables your chatbot to understand and help users and customers.
+Before we get onto intents, the first thing we need to do in _Watson Assistant_ is to enable a _**dialog skill**_. A _**skill**_ contains the training data and machine learning logic that enables your chatbot to understand and help users and customers.
 
-**[2.1]** <kbd>Click on the **Skills icon** in the sidebar, then **Create skill**. </kbd>
+**[2.1]** <kbd>Click on the **Settings icon** in the sidebar, then **Enable Dialog**. </kbd>
 
-![](./images/05-skill-sidebar.png)
+![](./images/05-assistant-service-settings)
 
-![](./images/06-create-skill.png)
+![](./images/05-assistant-service-settings-en-dialog)
 
-<kbd>Ensure **Dialog skill** is selected, then hit **Next**.</kbd>
+<kbd>Ensure **Dialog skill** is selected, then hit **Activate Dialog**.</kbd>
 
-![](./images/07-dialog-skill.png)
+![](./images/05-assistant-service-settings-en-dialog-en)
 
 <kbd>Enter the name **Phone Advisor** for your skill, and hit **Create dialog skill**.</kbd>
 
