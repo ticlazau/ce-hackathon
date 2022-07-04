@@ -41,10 +41,6 @@ Before we get onto intents, the first thing we need to do in _Watson Assistant_ 
 
 ![](./images/05-assistant-service-settings-en-dialog-en.png)
 
-<kbd>From **Dialog** select **Intent**, then hit **Create Intent**.</kbd>
-
-![](./images/06-assistant-service-en-intent.png)
-
 Now we'll go on to create the constructs required for our chatbot: _**Intents**_, _**Entities**_ and _**Dialogs**_.
 
 **[2.2]** We'll start by creating the chatbot _**intents**_.
@@ -55,7 +51,7 @@ Choosing the correct _intent_ for a user's input is the first step in providing 
 
 You can add a description for your _intent_ here as well if you wish.
 
-![](./images/09-create-intent.png)
+![](./images/06-assistant-service-en-intent.png)
 
 ![](./images/10-create-intent-greeting.png)
 
