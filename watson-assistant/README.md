@@ -34,9 +34,14 @@ Before we get onto intents, the first thing we need to do in _Watson Assistant_ 
 
 ![](./images/05-assistant-service-settings-en-dialog.png)
 
+
 <kbd>Ensure **Dialog skill** is selected, then hit **Activate Dialog**.</kbd>
 
 ![](./images/05-assistant-service-settings-en-dialog-en.png)
+
+<kbd>From **Dialog** select **Intent**, then hit **Create Intent**.</kbd>
+
+![](./images/06-assistant-service-en-intent.png)
 
 <kbd>Enter the name **Phone Advisor** for your skill, and hit **Create dialog skill**.</kbd>
 
