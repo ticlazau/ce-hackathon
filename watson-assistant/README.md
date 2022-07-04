@@ -16,6 +16,8 @@ In this lab we'll start to build a chatbot, by using the building blocks of _Wat
 
 ![](./images/04-assistant-service-launch.png)
 
+<kbd>Click **+** on top right in order to create a new Chat Bot, and chose **Phone Adviser - <your name>**.</kbd>
+
 ![](./images/04-assistant-service-create1.png)
 
 ![](./images/04-assistant-service-create2.png)
@@ -42,10 +44,6 @@ Before we get onto intents, the first thing we need to do in _Watson Assistant_ 
 <kbd>From **Dialog** select **Intent**, then hit **Create Intent**.</kbd>
 
 ![](./images/06-assistant-service-en-intent.png)
-
-<kbd>Enter the name **Phone Advisor** for your skill, and hit **Create dialog skill**.</kbd>
-
-![](./images/08-create-dialog-skill.png)
 
 Now we'll go on to create the constructs required for our chatbot: _**Intents**_, _**Entities**_ and _**Dialogs**_.
 
