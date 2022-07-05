@@ -278,7 +278,7 @@
   },
   "webhooks": [
     {
-      "url": "https://eu-de.functions.appdomain.cloud/api/v1/web/4125a80a-7115-4ca9-b746-84b7781ea2c2/default/IBM-Weather-API-Location-Forecast.json",
+      "url": "https://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
       "name": "main_webhook",
       "headers": []
     }
