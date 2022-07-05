@@ -1,4 +1,4 @@
-# Examples of Webhooks for Watson Asisstant
+# Examples of Webhooks for Watson Asisstant 
 
 To make a programmatic call, define a webhook that sends a POST request callout to an external application that performs a programmatic function. You can then invoke the webhook from one or more dialog nodes.
 
