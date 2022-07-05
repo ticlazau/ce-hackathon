@@ -1,2 +1,2 @@
-# Client Engineering Hackathon - 2022
+# Client Engineering
 ![](bg.png)
