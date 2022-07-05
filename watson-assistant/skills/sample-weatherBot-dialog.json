@@ -1,0 +1,737 @@
+{
+  "intents": [
+    {
+      "intent": "bye",
+      "examples": [
+        {
+          "text": "bye"
+        },
+        {
+          "text": "bye bye"
+        },
+        {
+          "text": "c ya"
+        },
+        {
+          "text": "good bye"
+        },
+        {
+          "text": "see you"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "generic_weather",
+      "examples": [
+        {
+          "text": "cloudy"
+        },
+        {
+          "text": "Give me weather data of Sydney",
+          "mentions": [
+            {
+              "entity": "location",
+              "location": [
+                24,
+                30
+              ]
+            }
+          ]
+        },
+        {
+          "text": "How does the weather look like?"
+        },
+        {
+          "text": "How does the weather look like in Bengaluru",
+          "mentions": [
+            {
+              "entity": "location",
+              "location": [
+                34,
+                43
+              ]
+            }
+          ]
+        },
+        {
+          "text": "how will be weather"
+        },
+        {
+          "text": "pleasant"
+        },
+        {
+          "text": "weather"
+        },
+        {
+          "text": "Weather in London",
+          "mentions": [
+            {
+              "entity": "location",
+              "location": [
+                11,
+                17
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Weather in Mumbai",
+          "mentions": [
+            {
+              "entity": "location",
+              "location": [
+                11,
+                17
+              ]
+            }
+          ]
+        },
+        {
+          "text": "will it be pleasant?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "greetings",
+      "examples": [
+        {
+          "text": "greetings"
+        },
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "Hey"
+        },
+        {
+          "text": "Heyya"
+        },
+        {
+          "text": "Hi"
+        },
+        {
+          "text": "What's up?"
+        }
+      ]
+    },
+    {
+      "intent": "rain_forecast",
+      "examples": [
+        {
+          "text": "cloud"
+        },
+        {
+          "text": "cloudy"
+        },
+        {
+          "text": "is rain expected?"
+        },
+        {
+          "text": "rain"
+        },
+        {
+          "text": "shiny"
+        },
+        {
+          "text": "thunderstorm"
+        },
+        {
+          "text": "Will it be sunny"
+        },
+        {
+          "text": "Will it rain"
+        },
+        {
+          "text": "will there be rain"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "temperature_forecast",
+      "examples": [
+        {
+          "text": "celsius"
+        },
+        {
+          "text": "cold"
+        },
+        {
+          "text": "cool"
+        },
+        {
+          "text": "fahrenheit"
+        },
+        {
+          "text": "heat"
+        },
+        {
+          "text": "hot"
+        },
+        {
+          "text": "temp"
+        },
+        {
+          "text": "temperature"
+        },
+        {
+          "text": "What will be he temperature at"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "thankyou",
+      "examples": [
+        {
+          "text": "Thanks"
+        },
+        {
+          "text": "Thanks a lot"
+        },
+        {
+          "text": "Thank you"
+        },
+        {
+          "text": "Thank you very much"
+        }
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "entity": "location",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "40.63908,-74.00433",
+          "synonyms": [
+            "New York"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "44.60733,25.45497",
+          "synonyms": [
+            "Bucharest"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "47.3864,8.4989",
+          "synonyms": [
+            "Zuerich",
+            "Zürich"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "52.37951,9.77290",
+          "synonyms": [
+            "Hannover",
+            "Hannöver",
+            "Hanover"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "59.91694,10.77569",
+          "synonyms": [
+            "Oslo"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Bengaluru",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "London",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Mumbai",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Sydney",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-date",
+      "values": []
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "webhooks": [
+    {
+      "url": "https://eu-de.functions.appdomain.cloud/api/v1/web/4125a80a-7115-4ca9-b746-84b7781ea2c2/default/IBM-Weather-API-Location-Forecast.json",
+      "name": "main_webhook",
+      "headers": []
+    }
+  ],
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I am weather Bot. I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "I am weather Bot. Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I am weather Bot. I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "destination_bot": "agent"
+      },
+      "metadata": {},
+      "conditions": "anything_else",
+      "digress_in": "does_not_return",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_25_1538575846436"
+    },
+    {
+      "type": "event_handler",
+      "parent": "node_9_1538559670989",
+      "event_name": "focus",
+      "dialog_node": "handler_10_1538559717653",
+      "previous_sibling": "slot_14_1538559756688"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Please enter the location for forecast"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_10_1619154177044",
+      "event_name": "focus",
+      "dialog_node": "handler_10_1619154177046",
+      "previous_sibling": "handler_7_1619154177046"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_11_1538559717657",
+      "context": {
+        "location": "@location"
+      },
+      "metadata": {},
+      "conditions": "@location",
+      "event_name": "input",
+      "dialog_node": "handler_12_1538559717657"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": "Please enter the place for forecast",
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Please enter the place for forecast"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_11_1538559717657",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_13_1538559717657",
+      "previous_sibling": "handler_12_1538559717657"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_14_1538559756688",
+      "context": {
+        "date": "@sys-date"
+      },
+      "conditions": "@sys-date",
+      "event_name": "input",
+      "dialog_node": "handler_15_1538559756688"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": "Please enter the date for forecast"
+      },
+      "parent": "slot_14_1538559756688",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_16_1538559756688",
+      "previous_sibling": "handler_15_1538559756688"
+    },
+    {
+      "type": "event_handler",
+      "parent": "node_1_1538559415461",
+      "event_name": "focus",
+      "dialog_node": "handler_2_1538559468850",
+      "previous_sibling": "slot_21_1538560793660"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_1_1539855184973",
+      "event_name": "focus",
+      "dialog_node": "handler_2_1539855249720",
+      "previous_sibling": "slot_10_1619154177044"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_21_1538560793660",
+      "context": {
+        "location": "@location"
+      },
+      "conditions": "@location",
+      "event_name": "input",
+      "dialog_node": "handler_22_1538560793660"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": "Please enter the place for rain forecast",
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Please enter the place for rain forecast"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "slot_21_1538560793660",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_23_1538560793660",
+      "previous_sibling": "handler_22_1538560793660"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_6_1538559530971",
+      "context": {
+        "date": "@sys-date"
+      },
+      "metadata": {},
+      "conditions": "@sys-date",
+      "event_name": "input",
+      "dialog_node": "handler_7_1538559530971"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_10_1619154177044",
+      "context": {
+        "location": "@location"
+      },
+      "conditions": "@location",
+      "event_name": "input",
+      "dialog_node": "handler_7_1619154177046"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": "Please enter the date for rain forecast"
+      },
+      "parent": "slot_6_1538559530971",
+      "metadata": {},
+      "event_name": "focus",
+      "dialog_node": "handler_8_1538559530971",
+      "previous_sibling": "handler_7_1538559530971"
+    },
+    {
+      "type": "frame",
+      "title": "Rain_Forecast",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Light showers are expected in $location on $date"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "destination_bot": "agent"
+      },
+      "metadata": {
+        "fallback": "leave"
+      },
+      "conditions": "#rain_forecast",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_1_1538559415461",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_9_1538559670989",
+      "digress_out_slots": "not_allowed"
+    },
+    {
+      "type": "frame",
+      "title": "Generic_Weather",
+      "actions": [
+        {
+          "name": "main_webhook",
+          "type": "webhook",
+          "parameters": {
+            "geocode": "$location"
+          },
+          "result_variable": "response"
+        }
+      ],
+      "metadata": {
+        "fallback": "leave",
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#generic_weather",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_1_1539855184973",
+      "digress_out": "allow_all",
+      "previous_sibling": "Welcome",
+      "digress_out_slots": "not_allowed"
+    },
+    {
+      "type": "standard",
+      "title": "thank you",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Have a nice time. bye."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "destination_bot": "agent"
+      },
+      "metadata": {},
+      "conditions": "#thankyou",
+      "dialog_node": "node_24_1538573581070",
+      "previous_sibling": "node_1_1538559415461"
+    },
+    {
+      "type": "standard",
+      "title": "Bye",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Have a nice time. Bye."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "context": {
+        "destination_bot": "agent"
+      },
+      "metadata": {},
+      "conditions": "#bye",
+      "dialog_node": "node_25_1538575846436",
+      "previous_sibling": "node_24_1538573581070"
+    },
+    {
+      "type": "frame",
+      "title": "Temperature_Forecast",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Weather will be pleasant in $location on $date with an average temperature of about 22 degree celsius."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "context": {
+        "destination_bot": "agent"
+      },
+      "metadata": {
+        "fallback": "leave"
+      },
+      "conditions": "#temperature_forecast",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_9_1538559670989",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_1_1539855184973",
+      "digress_out_slots": "not_allowed"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "<? $response.narrative[0] ?>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1539855184973",
+      "context": {
+        "location": null
+      },
+      "conditions": "$response",
+      "dialog_node": "response_5_1656569939076"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "error"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_1_1539855184973",
+      "conditions": "anything_else",
+      "dialog_node": "response_8_1656569939391",
+      "previous_sibling": "response_5_1656569939076"
+    },
+    {
+      "type": "slot",
+      "parent": "node_1_1539855184973",
+      "variable": "$location",
+      "dialog_node": "slot_10_1619154177044",
+      "previous_sibling": "response_8_1656569939391"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_9_1538559670989",
+      "metadata": {},
+      "variable": "$location",
+      "dialog_node": "slot_11_1538559717657"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_9_1538559670989",
+      "metadata": {},
+      "variable": "$date",
+      "dialog_node": "slot_14_1538559756688",
+      "previous_sibling": "slot_11_1538559717657"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_1_1538559415461",
+      "metadata": {},
+      "variable": "$location",
+      "dialog_node": "slot_21_1538560793660",
+      "previous_sibling": "slot_6_1538559530971"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_1_1538559415461",
+      "metadata": {},
+      "variable": "$date",
+      "dialog_node": "slot_6_1538559530971"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello. I am weather Bot. How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "welcome || #greetings",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "tooling": {
+      "store_generic_responses": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    }
+  },
+  "learning_opt_out": false,
+  "name": "weatherBot",
+  "language": "en",
+  "description": "Weather Bot"
+}
