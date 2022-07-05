@@ -1,12 +1,11 @@
-# **Lab 5: Extending Your Chatbot with _Watson Discovery_**
-This lab will focus on extending your simple chatbot to handle _long-tail_ conversations, by using the _Watson Discovery_ service.
+# **Extending Your Chatbot with _Watson Discovery_**
+This part will focus on extending your simple chatbot to handle _long-tail_ conversations, by using the _Watson Discovery_ service.
 
 ## Requirements
-- Successful completion of [Lab 4: Understanding User Sentiment - Integrating Watson Natural Language Understanding](../4-Sentiment).
+- Successful completion of the privious part.
 
 ## Agenda:
 - Introduction to _Watson Discovery_
-- Setup the _Discovery_ service
 - Build a _Discovery_ document _collection_
 - Query the collection using _Watson Discovery Query Builder_
 - Create a _Watson Discovery_ _IBM Cloud Function_
@@ -36,33 +35,6 @@ In this lab, we are going to use _Watson Discovery_ to build a _corpus_ of more 
 We'll integrate this capability with _Watson Assistant_, by passing any user query that isn't directly picked up by an _intent_ over to _Watson Discovery_, which will then search the repository we've created and return the most appropriate response.
 
 ![](./images/02-short-long-tail.png)
-
-## Set up the _Discovery_ Service
-_Watson Discovery_ runs as a service on _IBM Cloud_, so we first need to create the service and make a note of its security credentials for later use.
-
-**[1.1]** <kbd>Go to the _IBM Cloud_ **Catalog**, select **Services**, filter on **AI** and select **Discovery**.</kbd>
-
-![](./images/03-discovery-service.png)
-
-<kbd>Select your **local** region.</kbd>
-
-<kbd>Use the default **Lite** plan if you are using your personal _IBM Cloud_ ID, or **Standard** if you are using a linked account.</kbd>
-
-<kbd>Name the service something like **Discovery-eventname-yourinitials**</kbd>
-
-(e.g. _Discovery-DSA2020-GRW_), so you are able to easily remember and find it.
-
-<kbd>Hit **Create** to provision the service.</kbd>.
-
-![](./images/04-create-service.png)
-
-**[1.2]** You may get a message saying the service may take some time to provision, and be taken to the **Resource list** which will indicate the status of your _Discovery_ instance.
-
-![](./images/05-provision-in-progress.png)
-
-After a short time you should see the service as **Active** - you may need to refresh the page to see the status change.
-
-<kbd>When the service is **Active**, select it from the list.</kbd>
 
 **[1.3]** <kbd>On the **Manage** page, copy and make a note of the **API Key** and **URL**. </kbd>
 
@@ -531,18 +503,7 @@ We'll only get this type of _"I didn't understand"_ message now if we draw a bla
   - `My S4 changed name when connected to PC` (_Discovery_)
   - `Blah blah` (neither path works - user should get a _"I don't understand"_ message)
 
-<kbd>Use **Try It** to work out any issues, then use one of your _integrations_ to see it working in production!</kbd>
-
-![](./images/51-slack-testing-1.png)
-![](./images/52-slack-testing-2.png)
-![](./images/53-slack-testing-3.png)
-
 ## Summary
 
 **Congratulations! You've extended your chatbot to include long-tail responses using a _Watson Discovery_ collection. Now if your chatbot can't find a specific response to your user's question within _Watson Assistant_, it will use Discovery to search for answers from a larger corpus of information.**
 
-If you want to download the _Watson Assistant_ _skill_ we've created thus far, you can do so [here](./assistant/skill-Phone-Advisor-lab-5.json). Once again, if you do import this _skill_, you'll have to modify:
-- the `Call getSentiment function` node to refer to your `getSentimentXXX` _IBM Cloud Function_ API details
-- the `Anything else: call Watson Discovery` node to refer to your `getDiscoveryTopHitXXX` _IBM Cloud Function API_ details
-
-_**The final part will show you how you can integrate third party data into your application. Go to [Lab 6: Integrating External Data using IBM Cloud Functions](../6-External) to complete your chatbot!**_
