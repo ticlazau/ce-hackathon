@@ -69,8 +69,6 @@ If you open any of the documents, you'll see they consist of a list of problems 
 
 ![](./images/09-upload-own-data.png)
 
-![](./images/10-setup-private-data.png)
-
 **[2.4]** <kbd>Give your new _collection_ a name (e.g. **Phone-Advisor**) and click **Create**.</kbd>
 
 ![](./images/11-name-collection.png)
