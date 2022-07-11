@@ -325,8 +325,6 @@ def main(dict):
 - <kbd>Replace `<discovery_url>` with the value of the **URL** you saved from the same credentials</kbd>
 - <kbd>Change `<my_collection_id>` to the **Collection ID** value you saved earlier from within the _Watson Discovery_ tooling</kbd>
 
-![](./images/42-enter-api-details.png)
-
 This code run by sending parameters text and an input text. In the same way, in you dialog node, add a parameter called text and value as <? input.text ?> . This will return the results. You can then use the variable webhooks_result_1 to extract whatever you need. See Example response section in https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-query-parameters#answer-finding
 
 **[4.4]** <kbd>Test your new _Discovery_ _IBM Cloud Function_ by selecting **Invoke with parameters**.</kbd>
