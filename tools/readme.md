@@ -1,7 +1,8 @@
 
 ### Tools:
-- [Dialog/Action Skill Analysis for Watson Assistant](https://github.com/watson-developer-cloud/assistant-skill-analysis)
-- [Watson Developer Cloud Python SDK](https://github.com/watson-developer-cloud/python-sdk)
+- [IBM Dialog/Action Skill Analysis for Watson Assistant](https://github.com/watson-developer-cloud/assistant-skill-analysis)
+- [IBM Watson Developer Cloud Python SDK](https://github.com/watson-developer-cloud/python-sdk)
+- [Degradation tester](https://github.com/CallumK24/Watson-Degradation-Tester)
 
 ### Additional Info:
 - [Benchmarking Commercial Intent Detection Services with Practice-Driven Evaluations](https://aclanthology.org/2021.naacl-industry.38/)
