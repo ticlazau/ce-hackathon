@@ -295,86 +295,39 @@ Now let's build a an _**IBM Cloud Function**_ to query the _collection_, and the
 
 <kbd>Call it **getDiscoveryTopHitXXX**, substituting _**XXX**_ for your initials once more to give the action a unique name.</kbd>
 
-<kbd>Use **Node.js 10** for the runtime.</kbd>
+<kbd>Use **Python** for the runtime.</kbd>
 
 ![](./images/41-create-action.png)
 
 **[4.2]** <kbd>In the code editor delete the default code and replace it with this:</kbd>
 
-```Javascript
-/**
-  *
-  * main() will be run when you invoke this action
-  *
-  * @param Accepts a text string 'payload' used for the Discovery query
-  *
-  * @return JSON object with:
-  *         topHitFound:    true / false
-  *         topHitQuestion: title of best matching document
-  *         topHitAnswer:   answer from best matching document
-  *         topHitScore:    Watson Discovery 'score' for query
-  *
-  * Note 1: will only return topHitFound "true" if documents matched
-  * Note 2: answer may be returned in multiple array entries, these are concatenated in the code
-  *
-  */
-function main({payload: payload}) {
-
-    var DiscoveryV1 = require('watson-developer-cloud/discovery/v1');
-
-    var discovery = new DiscoveryV1({
-      iam_apikey: '<discovery_api_key>',
-      url: '<discovery_url>',
-      version: '2017-09-01'
-    });
-
-    var promise = new Promise(function(resolve,reject) {
-        discovery.query(
-          {
-            environment_id: '<my_environment_id>',
-            collection_id: '<my_collection_id>',
-            count: 1,
-            query: payload
-          },
-          function(err, response) {
-            if (err) {
-              console.error(err);
-              reject(err);
-            } else {
-              if (response.matching_results == 0) {
-                  resolve({topHitFound: 'false'})
-              } else {
-                  var topHitQuestion = response.results[0].question[0];
-                  var topHitAnswer = "";
-                  for (var i = 0; i < response.results[0].answer.length; i++) {
-                      topHitAnswer += response.results[0].answer[i];
-                  }
-                  var topHitScore = response.results[0].score;
-                  resolve({topHitQuestion: topHitQuestion, topHitAnswer: topHitAnswer, topHitScore: topHitScore, topHitFound: 'true'});
-              }
-            }
-          }
-        );
-    });
-
-    return promise;
-}
+```Pythonscript
+import sys
+import json
+from ibm_watson import DiscoveryV2
+from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
+def main(dict):
+    authenticator = IAMAuthenticator('<discovery_api_key>')
+    service = DiscoveryV2(version='2020-08-30',authenticator=authenticator)
+    service.set_service_url('<discovery_url>')
+    if dict and 'text' in dict:
+        response = service.query(
+            project_id='<my_collection_id>',
+            natural_language_query=dict['text'],
+            passages={ "enabled": true, "find_answers":true}
+            ).get_result()
+        return response
+    else 
+        return { 'status':'Failed to query Discovery due to missing parameters' }
 ```
 **[4.3]** <kbd>You need to make four changes before saving the code:</kbd>
 - <kbd>Change `<discovery_api_key>` to the **API Key** value you saved from your _Watson Discovery_ credentials when you created the service</kbd>
 - <kbd>Replace `<discovery_url>` with the value of the **URL** you saved from the same credentials</kbd>
-- <kbd>Change `<my_environment_id>` to the **Environment ID** value you saved earlier from within the _Watson Discovery_ tooling</kbd>
 - <kbd>Change `<my_collection_id>` to the **Collection ID** value you saved earlier from within the _Watson Discovery_ tooling</kbd>
 
 ![](./images/42-enter-api-details.png)
 
-This code - which is again based on the IBM Watson documented code snippets [here](https://github.com/watson-developer-cloud/node-sdk) - accepts text as input (_payload_), calls your _Watson Discovery_ service and returns the following results:
-- _topHitFound_:  
-  - _true_ (document matched)
-  - _false_ (no documents matched)
-- _topHitQuestion_:  title of the best matching document
-- _topHitAnswer_: answer from the best matching document
-- _topHitScore_:  _Watson Discovery_ _confidence score_ for the query
+This code run by sending parameters text and an input text. In the same way, in you dialog node, add a parameter called text and value as <? input.text ?> . This will return the results. You can then use the variable webhooks_result_1 to extract whatever you need. See Example response section in https://cloud.ibm.com/docs/discovery-data?topic=discovery-data-query-parameters#answer-finding
 
 **[4.4]** <kbd>Test your new _Discovery_ _IBM Cloud Function_ by selecting **Invoke with parameters**.</kbd>
 
